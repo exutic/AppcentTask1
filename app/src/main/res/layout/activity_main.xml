@@ -24,8 +24,8 @@
         android:id="@+id/ll_search_container"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginLeft="50dp"
-        android:layout_marginRight="50dp"
+        android:layout_marginLeft="25dp"
+        android:layout_marginRight="25dp"
         android:layout_weight="1"
         android:orientation="horizontal"
         android:weightSum="10"
@@ -72,12 +72,14 @@
     </LinearLayout>
 
     <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginLeft="25dp"
-        android:layout_marginTop="25dp"
-        android:layout_marginRight="25dp"
-        app:layout_constraintTop_toBottomOf="@+id/ll_search_container">
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:background="#AEABAB"
+        app:layout_constraintBottom_toTopOf="@+id/ll_footer_container"
+        app:layout_constraintLeft_toLeftOf="@+id/ll_search_container"
+        app:layout_constraintRight_toRightOf="@+id/ll_search_container"
+        app:layout_constraintTop_toBottomOf="@+id/ll_search_container"
+        tools:layout_editor_absoluteX="25dp">
 
         <androidx.recyclerview.widget.RecyclerView
             android:id="@+id/rcl_main_1"
@@ -87,6 +89,7 @@
     </LinearLayout>
 
     <LinearLayout
+        android:id="@+id/ll_footer_container"
         android:layout_width="match_parent"
         android:layout_height="65dp"
         android:background="@android:color/black"
@@ -112,6 +115,18 @@
 
 
     </LinearLayout>
+
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <ProgressBar
+            android:id="@+id/progress_bar"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:visibility="gone" />
+    </FrameLayout>
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>
